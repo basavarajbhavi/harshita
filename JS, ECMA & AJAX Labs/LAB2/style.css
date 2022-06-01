@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    min-width: 250px;
+  }
+  .to-do-div{
+      width: 50%;
+      margin: 0 auto;
+  }
+  /* Include the padding and border in an element's total width and height */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Remove margins and padding from the list */
+  ul {
+    margin-top: 4rem;
+    width: 80%;
+    padding: 0;
+  }
+  
+  /* Style the list items */
+  ul li {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    font-size: 18px;
+    transition: 0.2s;
+    
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  
+  .list-item{
+    border: 2px solid black;
+    width: 81%;
+    height: 2rem;
+    display: flex;
+    padding-left:1rem;
+    align-items: center; 
+  }
+  /* Style the close button */
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("images/delete.png");
+  }
+  
+ 
+  
+  /* Style the header */
+  .header {
+    padding: 30px 40px;
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Clear floats after the header */
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+    width: 2rem;
+    height: 3rem;
+    display: block;
+    background-image: url("images/add.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    right: 9rem;
+  }
+  .displayBtn {
+    padding: 10px;
+    width: 10%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    margin-left: 1rem;
+  }
+  
+  .addBtn:hover {
+    background-color: #bbb;
+  }

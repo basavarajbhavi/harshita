@@ -1,0 +1,76 @@
+
+html,body{
+    width: 100%;
+    margin: 0;
+}
+input[type="text" i],input[type="password" i] {
+    padding: 0.5rem;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid;
+}
+#wrapper {
+    width: 30%;
+    margin: 50px auto;
+    padding: 50px;
+    background: #D7FBFF;
+  }
+  form {
+    margin: 30px auto;
+  }
+  tr{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .textInput {
+    border: none;
+    height: 28px;
+    margin: 2px;
+    border: 1px solid #6B7363;
+    font-size: 1.2em;
+    padding: 5px;
+    width: 95%;
+  }
+  .textInput:focus {
+    outline: none;
+  }
+  .btn {
+    width: 98.6%;
+    border: 1px solid black;
+    margin-top: 5px;
+    color: black;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 12px;
+  }
+  .male{
+      width:2rem;
+      height: 2rem;
+      display: block;
+      background-image: url("images/male.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+  }
+  .female{
+    width:2rem;
+    height: 2rem;
+    display: block;
+    background-image: url("images/female.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+select{
+    width: 100% !important;
+    height: 2rem;
+}
+select:not(:-internal-list-box){
+    width: 100%; 
+}

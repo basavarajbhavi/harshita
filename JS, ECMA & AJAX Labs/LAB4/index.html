@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    </head>
+<body>
+  
+    <div id="main">
+        <div class="h-tag">
+        <h2>Register Your Account</h2>
+        </div>
+        <!-- create account div -->
+        <div class="login">
+        <table cellspacing="2" align="center" cellpadding="8" border="0">
+        <tr>
+        <td align="right">Enter Name :</td>
+        <td><input type="text" placeholder="Enter user here" id="t1" class="tb" /></td>
+        </tr>
+        <tr>
+        <td align="right">Enter Password :</td>
+        <td><input type="password" placeholder="Enter Password here" id="t4" class="tb" />
+            <i class="uil uil-eye-slash toggle"></i>
+            <span id="StrengthDisp" class="badge displayBadge"></span>
+        </td>
+        </tr>
+        <tr>
+        <td align="right">Enter Confirm Password :</td>
+        <td><input type="text" placeholder="Enter Password here" id="t5" class="tb" />
+        <span id="not-matchtxt"></span>
+        </td>
+        </tr>
+        <tr>
+            <td align="right"><label for="gender"> Select you gender:</label></td>
+            <td style="display: flex;width: 80%;">
+                <select id="gender" name="gender" class="field select medium" onchange="run()">
+                    <option value="none">Gender</option><option value="1">Male</option><option value="2">Female</option>
+                    </select>
+            <span id="gender-image"></span>
+            </td>
+        </tr>
+        <tr>
+        <td></td>
+        <td>
+        <input type="submit" value="Register" class="btn" onclick="registration()" /></td>
+        </tr>
+        </table>
+        </div>
+        <!-- create account box ending here.. -->
+        </div>
+        <!-- Main div ending here... -->
+        <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
