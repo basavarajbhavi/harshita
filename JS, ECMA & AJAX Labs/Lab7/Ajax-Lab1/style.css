@@ -1,0 +1,28 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.textfalse{
+    color:yellow;
+}
+.texttrue{
+    color:green;
+}
+#info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#btn{
+    background-color: blue !important;
+    font-size: 15px;
+    padding: 0.3rem 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.hide-me{
+    display: none;
+}
