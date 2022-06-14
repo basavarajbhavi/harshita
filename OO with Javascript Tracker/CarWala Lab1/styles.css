@@ -1,0 +1,173 @@
+body,
+html {
+  height: 100%;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: red; 
+}
+.car-bg {
+  background-image: url("/bg-car.jfif");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+
+.car-info-block {
+  border: 5px solid #2c2c2c;
+  border-radius: 10px;
+  background-color: #222222;
+  opacity: 0.8;
+}
+
+/* NAV BAR */
+
+h1.navbar-brand {
+  font-size: 32px;
+  color: #0aab0a;
+}
+
+.pratian-title {
+  font-size: 28px;
+  color: #a70a0a;
+  font-weight: 400;
+}
+
+.navbar-brand img {
+  width: 125px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+}
+
+.navbar i{
+  font-size: 30px;
+  margin-right: 25px;
+}
+.menu hr {
+  height: 5px;
+  background-color: #0aab0a;
+}
+
+
+.features,
+.cars,
+.adds {
+  border: 2px solid black;
+  padding: 0px 20px 20px 20px;
+  border-radius: 10px;
+  width: 35.33%;
+}
+.features{
+  width: 25.33%;
+}
+.cars{
+  width: 45.33%;
+}
+
+.features h6,
+.cars h6,
+.adds h6 {
+  background-color: black;
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: -15px;
+  text-align: center;
+}
+
+#data img {
+  width: 170px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+#data .products {
+  display: flex;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  height: 7rem;
+}
+
+#data {
+  height: 370px;
+  overflow-y: scroll;
+}
+.img{
+  width: 50%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: white;
+}
+.car-info{
+  width: 50%;
+  height: 100%;
+  margin-left: 1rem;
+}
+.inner-img{
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+}
+label{
+  margin-left: 1rem;
+}
+.features h7{
+  color: blue;
+  font-weight: bold;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  background: red;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius:10px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 38px;
+  height: 25px;
+  background: red;
+  cursor: pointer;
+  border-radius:10px;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: red;
+  cursor: pointer;
+}

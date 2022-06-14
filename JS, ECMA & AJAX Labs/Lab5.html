@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <style>
+        *{
+            font-weight: bold;
+        }
+        body{
+           
+            color:black;
+             }
+        form{
+            margin: 0 auto;
+            width: 45%;
+            border-top: 3px solid white;
+            border-bottom: 3px solid white;
+            border-left: transparent;
+            border-right: transparent;
+            border-style: double;
+            border-radius: 15px;
+            height: auto;
+            font-size: 15px;
+             margin-top: 4%;
+             font-weight: bold;
+
+         }
+         h2{
+             margin-top: 30px;
+             font-family: Verdana, Geneva, Tahoma, sans-serif ;
+         }
+         label {
+                display: inline-block;
+                text-align: right;
+                width: 40%;
+                margin-top: 20px;
+                margin : 15px;
+                border:  hidden ;
+                }
+         input {
+            padding: 5px;
+           
+         }
+         button,.submit {
+                margin-top: 20px;
+                border-radius: 3px;
+                padding: 5px;
+                width: 25%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif ;
+                }
+            .btn{
+                text-align: right;
+                margin-right: 45px;
+                margin-bottom: 10px;
+               
+            }
+			 .btn1{
+                text-align: left;
+                margin-right: 45px;
+                margin-bottom: 10px;
+               
+            }
+		
+
+    </style>
+</head>
+<body>
+
+<script>
+	function formValidation(){
+	
+
+ 
+			var age = +document.getElementById('age').value;
+			const email = document.getElementById("email");
+
+if ( !( age > 1 && age<100 ) ){
+
+        alert("The age must be a number between 1 and 100");
+        return false;
+}
+
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(email.value.match(mailformat))
+{
+
+
+}
+else
+{
+alert("You have entered an invalid email address!");
+
+}
+ const pw1 = document.getElementById("pswd1").value;
+  const pw2 = document.getElementById("pswd2").value;
+  if(pw1 != pw2)
+  {	
+  	alert("Passwords did not match");
+  } 
+let input = document.querySelectorAll("[type='text']");
+ let empty = [...input].filter(el => el.value.trim() == "");
+  //check length
+  if (empty.length && empty1.lenght) {
+    //show alert
+    alert('Please fill all the fields');
+  }
+  else {
+  	alert("Account created successfully");
+  }
+
+			}
+</script>
+    <div>
+	
+        <form class="form-horizontal" name="registration" onsubmit="return formValidation()">
+		
+             <div>
+                <label for="name">Enter Name : </label>
+                <input type="text" name="name" id="name" placeholder="your name">
+            </div>
+			<div>
+                <label for="name">Enter Email : </label>
+                <input type="text" name="email" id="email" placeholder="your email">
+            </div>
+			<div>
+                <label for="name">Age: </label>
+                <input  type="text" id="age" min=1 max=100 >
+            </div> 
+			<div>
+                <label for="name">BirthDate: </label>
+                <input  type="date" id="date" required=true>
+            </div> 
+			<div>
+                <label for="name">Graduated In: </label>
+                 <select name="Age" id="Age" required=true>
+              <option value="">Select Degree</option>
+              <option value="BE">BE</option>
+              <option value="B.Tech">B.Tech</option>
+              <option value="BCA">BCA</option>
+              <option value="B.Arch">B.Arch</option>
+            </select>
+				
+            </div> 
+			<div>
+                <label for="name">phone: </label>
+                <input type="text" name="Phone Number" pattern="[7-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9">
+            </div> 
+<div>
+                <label for="name">Password: </label>
+                <input type="password" name="password" id="pswd1" required=true>
+            </div> 
+			<div>
+                <label for="name">Confirm Password: </label>
+                <input type="password" name="password" id="pswd2" required=true>
+            </div> 
+			
+            <div class="btn">
+			<input  class="submit"  type = "reset" value = "Reset" />
+			<input type="submit" class="submit" value="Create Account" />
+                
+            </div>
+         </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+[
+ 
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Audi",
+   "model": "A3",
+   "body_styles": "Sedan",
+   "price":100000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Audi",
+   "model": "A4",
+   "body_styles": "Sedan",
+   "price":250000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Audi",
+   "model": "A4 allroad",
+   "body_styles": "Wagon",
+   "price":120000,"fueltype": "Petrol"
+   
+ },
+ 
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Audi",
+   "model": "A6",
+   "body_styles": "Sedan",
+   "price":1000,"fueltype": "Diesel"
+ },
+ 
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "3 Series",
+   "body_styles": "Sedan",
+   "price":10000000,"fueltype": "Petrol"
+ },
+
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "5 Series",
+   "body_styles": "Sedan",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "7 Series",
+   "body_styles": "Sedan",
+   "price":10000000,"fueltype": "Diesel"
+ },
+
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "i4",
+   "body_styles": "Coupe",
+   "price":10000000,"fueltype": "Diesel"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "iX",
+   "body_styles": "SUV",
+   "price":25000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "M3",
+   "body_styles": "Sedan",
+   "price":45000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "M4",
+   "body_styles": "Coupe",
+   "price":5000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "M5",
+   "body_styles": "Sedan",
+   "price":10000000,"fueltype": "Diesel"
+ },
+ 
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "X1",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "BMW",
+   "model": "X2",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ 
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Buick",
+   "model": "Enclave",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Buick",
+   "model": "Encore",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Buick",
+   "model": "Encore GX",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Buick",
+   "model": "Envision",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Cadillac",
+   "model": "CT4",
+   "body_styles": "Sedan",
+   "price":10000000,"fueltype": "Diesel"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Cadillac",
+   "model": "CT5",
+   "body_styles": "Sedan",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Cadillac",
+   "model": "Escalade",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Cadillac",
+   "model": "Escalade ESV",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ 
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Chevrolet",
+   "model": "Blazer",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ 
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Volvo",
+   "model": "XC40",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Volvo",
+   "model": "XC40 Recharge",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Diesel"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Volvo",
+   "model": "XC60",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ },
+ {
+   "usage_Details": "Have user for 5 months",
+   "car_Name": "Volvo",
+   "model": "XC90",
+   "body_styles": "SUV",
+   "price":10000000,"fueltype": "Petrol"
+ }
+]
