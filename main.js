@@ -39,6 +39,12 @@ var profileInfo =[];
                     div.className ="email";
                     div.innerHTML = profile.email
                     tooltiptext.appendChild(div);
+                    var signdiv = document.createElement('div');
+                    signdiv.className ="sign-out";
+                    signdiv.innerHTML = "Sign Out"
+                    tooltiptext.appendChild(signdiv)
+                    document.querySelector('.sign-out').addEventListener('click', logout)
+                   // signdiv.addEventListener("click", logout());
                 }
                 
                 });

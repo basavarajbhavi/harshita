@@ -14,13 +14,21 @@
         height: 100%;
         margin: 0;
     }
+    
+    .login-conatiner{
+        width: 100%;
+        height: 100%;
+        background-image: url('login_background.jfif');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     #firebaseui-auth-container{
         display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: #dcdcdc;
     }
     .firebaseui-tos{
         display: none;
@@ -28,7 +36,7 @@
 </style>
 </head>
 <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
-   
+   <div class="login-conatiner">
 <div id="firebaseui-auth-container"></div>
 <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
    
@@ -43,6 +51,6 @@
 <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
     <script src='firebase.js'></script>
     <script src='login.js'></script>
-   
+</div>
 </body>
 </html>

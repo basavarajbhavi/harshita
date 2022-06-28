@@ -97,6 +97,7 @@ function createPhysicsWorld() {
 
         }
     }
+    // Create the Coin.
     for (var i = 0; i < maze.dimension; i++) {
         for (var j = i + 1; j < maze.dimension; j++) {
             if (!maze[i][j]) {
@@ -144,7 +145,7 @@ function generate_maze_mesh(field) {
     var mesh = new THREE.Mesh(dummy, material)
     return mesh;
 }
-
+//Function to generate coins
 function generate_coin_mesh(field) {
     var dummy = new THREE.Geometry();
     let material = new THREE.MeshLambertMaterial({
@@ -180,6 +181,7 @@ function generate_coin_mesh(field) {
     var coinmaterial = new THREE.Mesh(dummy, material)
     return coinmaterial;
 }
+//Creating path for Destroyer onLoad
 const obstacles = () => {
     const maze = generateSquareMaze(mazeDimension);
 
@@ -231,6 +233,7 @@ const obstacles = () => {
         });
     });
 };
+//Creating path for Shield onLoad
 const shields = () => {
     const maze = generateSquareMaze(mazeDimension);
 
@@ -282,6 +285,7 @@ const shields = () => {
         });
     });
 };
+//Adding Destroyer
 const addDestroyer = (path) => {
     if (isLocked == false) {
         //alert("destroyer");
@@ -314,10 +318,9 @@ const addDestroyer = (path) => {
         dBall.CreateFixture(fixDef);
        // isLocked = false;
     }
-    else{
-        alert("hi");
-    }
+    
 };
+//Adding shield
 const addShield = (path) => {
     if (isLocked == false) {
         //alert("destroyer");
@@ -351,9 +354,7 @@ const addShield = (path) => {
         dBall.CreateFixture(fixDef);
        // isLocked = false;
     }
-    else{
-        alert("hi");
-    }
+    
 };
 function createRenderWorld() {
 
@@ -421,7 +422,6 @@ function createRenderWorld() {
 
 }
 
-
 function updatePhysicsWorld() {
 
     // Apply "friction". 
@@ -436,6 +436,8 @@ function updatePhysicsWorld() {
 
     // Take a time step.
     wWorld.Step(1 / 60, 8, 3);
+
+    //Adding Flag based on the condition
     if(Math.floor(wBall.GetPosition().x) > mazeDimension - 5 && Math.floor(wBall.GetPosition().y) > mazeDimension - 5){
         scene.add(flagimag);
         flagimag.userData = 'flag';
@@ -446,6 +448,7 @@ function updatePhysicsWorld() {
 }
 const coinArray = [];
 const shieldArray = [];
+//Collision Function
 const onContact = (contact) => {
 
     var fixA = contact.GetFixtureA();
@@ -455,34 +458,38 @@ const onContact = (contact) => {
         var audio = new Audio('audio/coin_collection.wav');
         audio.play()
         scores = scores + 1;
-        //console.log(scores);
         document.getElementById('score').innerHTML = "Score:" + scores;
         coinArray.push(fixB);
-        // coineffect.position.set(ballMesh.position.x,ballMesh.position.y,ballRadius);
-        // scene.add(coineffect);
-
     } else if (fixA.GetUserData() === "wall" && fixB.GetUserData() === "ball") {
         var hitSound = new Audio('audio/hitsound.wav');
          hitSound.play()
          if(isPowerOn == false){
-         hitCount ++;;
-        // coineffect.position.set(ballMesh.position.x,ballMesh.position.y,ballRadius);
-        // scene.add(coineffect);
+         hitCount ++;
         ballMesh.material.map = THREE.ImageUtils.loadTexture("crash.png");
 
         ballMesh.material.needsUpdate = true;
+        setTimeout(() => {
+            hitCount = 0;
+        }, 30000);
         if(hitCount > 3){
             var modal = document.getElementById("myModal");
             modal.style.display = "block";
             var span = document.getElementsByClassName("close")[0];
             this.updateScore()
-            span.onclick = function() {
+            setTimeout(() => {
                 modal.style.display = "none";
                 gameState = 'fade out';
                 hitCount = 0;
                 scores = 0;
                 document.getElementById('score').innerHTML = "Score:" + scores;
-              }
+            }, 1500);
+            // span.onclick = function() {
+            //     modal.style.display = "none";
+            //     gameState = 'fade out';
+            //     hitCount = 0;
+            //     scores = 0;
+            //     document.getElementById('score').innerHTML = "Score:" + scores;
+            //   }
               
         }
         
@@ -503,14 +510,14 @@ const onContact = (contact) => {
         var modal = document.getElementById("myModal");
         modal.style.display = "block";
         var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
+        setTimeout(() => {
             modal.style.display = "none";
             gameState = 'fade out';
             hitCount = 0;
             scores = 0;
             document.getElementById('score').innerHTML = "Score:" + scores;
-          }
-      }
+        }, 1500);
+           }
       
         
     }
@@ -518,6 +525,13 @@ const onContact = (contact) => {
         animAudio(endGameSound);
         shieldArray.push(fixB);
         isPowerOn = true;
+        ballMesh.material.map = THREE.ImageUtils.loadTexture("blue.jfif");
+        ballMesh.material.needsUpdate = true;
+        setTimeout(() => {
+            isPowerOn = false;
+            ballMesh.material.map = THREE.ImageUtils.loadTexture('ball.png');
+            ballMesh.material.needsUpdate = true;
+        }, 30000);
            }
            else if (fixA.GetUserData() === "Shield" && fixB.GetUserData() === "coin") {
             gameState = 'play';
@@ -552,6 +566,7 @@ function updateRenderWorld() {
     light.position.y = camera.position.y;
     light.position.z = camera.position.z - 3.7;
 }
+//TO Remove coins when ball Collides
 const removeCoins = (assests) => {
     if (!wWorld.IsLocked()) {
         if (assests.length > 0) {
@@ -566,6 +581,7 @@ const removeCoins = (assests) => {
         }
     }
 }
+//TO Remove shield when ball Collides
 const removeShield = (assests) => {
     if (!wWorld.IsLocked()) {
         if (assests.length > 0) {
@@ -623,7 +639,6 @@ function gameLoop() {
                 if(item.fPath.x == mazeX && item.fPath.y == mazeY){
                     IsLocked = false;
                     addDestroyer(item.oPath);
-                  //  phyPath = {x:item.oPath.x,y:item.oPath.y};
                    
                 }
                 else if(mazeX > item.fPath.x && mazeY == item.fPath.y){
@@ -634,7 +649,6 @@ function gameLoop() {
                 if(item.fPath.x == mazeX && item.fPath.y == mazeY){
                     IsLocked = false;
                     addShield(item.oPath);
-                  //  phyPath = {x:item.oPath.x,y:item.oPath.y};
                    
                 }
                 else if(mazeX > item.fPath.x && mazeY == item.fPath.y){
