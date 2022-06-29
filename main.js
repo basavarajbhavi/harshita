@@ -13,7 +13,16 @@ var profileInfo =[];
             document.getElementById("account").innerHTML =  profile.displayName[0];
             profileInfo = profile;
             var tooltip = document.querySelector('#account');
+            // var database = getDatabase(firebase.initializeApp(firebaseConfig));
+            var database = firebase.database()
+            const userId = push(child(ref(database),'users')).key;
             
+            set(ref(database,'users/'+userId),{
+                name:profile.displayName,
+                email:profile.email
+            });
+            
+           
             event.stopPropagation();
             document.getElementById('tooltiptext').style.display = "flex";
                 tooltip.addEventListener('click', function() {;

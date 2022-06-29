@@ -459,6 +459,16 @@ const onContact = (contact) => {
         scores = scores + 1;
         document.getElementById('score').innerHTML = "Score:" + scores;
         coinArray.push(fixB);
+        ballMesh.material.map = THREE.ImageUtils.loadTexture("blue.jfif");
+
+        ballMesh.material.needsUpdate = true;
+        setTimeout(() => {
+
+            ballMesh.material.map = THREE.ImageUtils.loadTexture('ball.png');
+
+            ballMesh.material.needsUpdate = true;
+
+        }, 200)
     } else if (fixA.GetUserData() === "wall" && fixB.GetUserData() === "ball") {
         var hitSound = new Audio('audio/hitsound.wav');
          hitSound.play()
@@ -734,6 +744,7 @@ function updateScore(){
       }); 
       
       
+      
 }
 function onMoveKey(axis) {
     keyAxis = axis.slice(0);
@@ -900,3 +911,11 @@ function viewscore(){
 function closePopup(){
     document.getElementById('scorepopup').style.display ='none';
 }
+function writeUserData(userId, name, email, imageUrl) {
+    firebase.database().ref('users/' + userId).set({
+      username: name,
+      email: email,
+      profile_picture : imageUrl
+    });
+  }
+  

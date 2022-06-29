@@ -12,6 +12,7 @@ var app_firebase ={};
       apiKey: "AIzaSyAWmCDLGcLL55MlskPG_El-_Ezn77wo1k0",
       authDomain: "test-85a16.firebaseapp.com",
       projectId: "test-85a16",
+      databaseURL: "https://test-85a16-default-rtdb.firebaseio.com",
       storageBucket: "test-85a16.appspot.com",
       messagingSenderId: "182921063423",
       appId: "1:182921063423:web:cd1eaef48aa354173e95ca",
@@ -21,6 +22,7 @@ var app_firebase ={};
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+   
     //app_firebase = firebase;
    //const analytics = getAnalytics(app);
 
