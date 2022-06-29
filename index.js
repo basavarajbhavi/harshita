@@ -18,7 +18,6 @@ var camera = undefined,
     ballRadius = 0.25,
     keyAxis = [0, 0],
     ironTexture = THREE.ImageUtils.loadTexture('/ball.png'),
-    coinTexture = THREE.ImageUtils.loadTexture('/coin.png'),
     planeTexture = THREE.ImageUtils.loadTexture('/concrete.png'),
     brickTexture = THREE.ImageUtils.loadTexture('/brick.png'),
     flagTexture = THREE.ImageUtils.loadTexture('/flag_end.png'),
@@ -426,7 +425,7 @@ function updatePhysicsWorld() {
 
     // Apply "friction". 
     var lv = wBall.GetLinearVelocity();
-    lv.Multiply(0.96);
+    lv.Multiply(0.97);
     wBall.SetLinearVelocity(lv);
 
     // Apply user-directed force.
@@ -481,6 +480,7 @@ const onContact = (contact) => {
                 gameState = 'fade out';
                 hitCount = 0;
                 scores = 0;
+                level = 1;
                 document.getElementById('score').innerHTML = "Score:" + scores;
             }, 1500);
             // span.onclick = function() {
@@ -515,6 +515,7 @@ const onContact = (contact) => {
             gameState = 'fade out';
             hitCount = 0;
             scores = 0;
+            level = 1;
             document.getElementById('score').innerHTML = "Score:" + scores;
         }, 1500);
            }
@@ -525,12 +526,12 @@ const onContact = (contact) => {
         animAudio(endGameSound);
         shieldArray.push(fixB);
         isPowerOn = true;
-        ballMesh.material.map = THREE.ImageUtils.loadTexture("blue.jfif");
-        ballMesh.material.needsUpdate = true;
+        // ballMesh.material.map = THREE.ImageUtils.loadTexture("blue.jfif");
+        // ballMesh.material.needsUpdate = true;
         setTimeout(() => {
             isPowerOn = false;
-            ballMesh.material.map = THREE.ImageUtils.loadTexture('ball.png');
-            ballMesh.material.needsUpdate = true;
+            // ballMesh.material.map = THREE.ImageUtils.loadTexture('ball.png');
+            // ballMesh.material.needsUpdate = true;
         }, 30000);
            }
            else if (fixA.GetUserData() === "Shield" && fixB.GetUserData() === "coin") {
@@ -615,6 +616,10 @@ function gameLoop() {
             light.intensity = 0;
             var level = Math.floor((mazeDimension - 1) / 2 - 4);
             $('#level').html('Level ' + level);
+            // if(level == 2){
+            //     alert("hi");
+            //     window.location = "home.html"
+            // }
             gameState = 'fade in';
             break;
 
@@ -685,6 +690,8 @@ function gameLoop() {
             if (Math.abs(light.intensity - 0.0) < 0.1) {
                 light.intensity = 0.0;
                 renderer.render(scene, camera);
+                coinMesh = generate_coin_mesh(maze);
+                scene.add(coinMesh);
                 gameState = 'initialize';
                 clock.stop();
                 console.log("EndTime:",clock.getElapsedTime());
@@ -696,7 +703,6 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 
 }
-
 
 function onResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -729,8 +735,6 @@ function updateScore(){
       
       
 }
-
-
 function onMoveKey(axis) {
     keyAxis = axis.slice(0);
 }
@@ -791,3 +795,108 @@ $(document).ready(function () {
     requestAnimationFrame(gameLoop);
 
 })
+var popupid = document.getElementById('popup');
+  
+function show(){
+    document.getElementById('popup').style.display ='flex';
+  }
+  function hide() {
+    document.getElementById('popup').style.display ='none';
+  }
+  function goToHome(){
+    window.location="home.html"
+  }
+  document.getElementById('tooltiptext').style.display = "flex";
+var profileInfo =[];
+(function(){
+   
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+         user.providerData.forEach((profile) => {
+            console.log("  Provider-specific UID: " + profile.uid);
+            console.log("  Name: " + profile.displayName);
+            console.log("  Email: " + profile.email);
+            console.log("  Photo URL: " + profile.photoURL);
+            document.getElementById("account").innerHTML =  profile.displayName[0];
+            profileInfo = profile;
+            var tooltip = document.querySelector('#account');
+            
+            event.stopPropagation();
+            document.getElementById('tooltiptext').style.display = "flex";
+                tooltip.addEventListener('click', function() {;
+                    if(event.target.id === "account"){
+                        document.getElementById('tooltiptext').style.display = "flex";
+                    }
+                    var tooltiptext = document.querySelector('.tooltiptext')
+                    document.getElementById('tooltiptext').style.display = "flex";
+                if (tooltiptext.classList.contains('active')) {
+                    tooltiptext.classList.remove('active');
+                    tooltiptext.innerHTML = " ";
+                } else {
+                    tooltiptext.classList.add('active');
+                    var button = document.createElement('div');
+                    button.className = "button";
+                    button.innerHTML =  profile.displayName[0];
+                    tooltiptext.appendChild(button)
+                    var name = document.createElement('div');
+                    name.className ="name";
+                    name.innerHTML = profile.displayName
+                    tooltiptext.appendChild(name);
+                    var div = document.createElement('div');
+                    div.className ="email";
+                    div.innerHTML = profile.email
+                    tooltiptext.appendChild(div);
+                    var scorediv = document.createElement('div');
+                    scorediv.className ="scorediv";
+                    scorediv.innerHTML = "View Leader Board"
+                    tooltiptext.appendChild(scorediv);
+                    document.querySelector('.scorediv').addEventListener('click', viewscore)
+                    var signdiv = document.createElement('div');
+                    signdiv.className ="sign-out";
+                    signdiv.innerHTML = "Sign Out"
+                    tooltiptext.appendChild(signdiv)
+                    document.querySelector('.sign-out').addEventListener('click', logout)
+                   // signdiv.addEventListener("click", logout());
+                }
+                
+                });
+          
+          });
+        } else {
+          window.location = "login.html"
+        }
+      }); 
+
+})()
+
+function hideDiv() {
+    var target = event.target || event.srcElement;
+    // filter event handling when the event bubbles
+    if (event.currentTarget == target.parentElement) {
+        document.getElementById('tooltiptext').style.display = "none";
+        if (document.getElementById('tooltiptext').classList.contains('active')) {
+            document.getElementById('tooltiptext').classList.remove('active');
+            document.getElementById('tooltiptext').innerHTML = " ";
+        } 
+    }
+    else{
+        document.getElementById('tooltiptext').style.display = "flex";
+    }
+
+}
+function logout(){
+    window.location="login.html"
+}
+function GotoPage(){
+    // var x = document.getElementById("myAudio")
+    // x.play(); 
+    setTimeout(() => {
+    window.location="index.html";
+    }, 700);
+}
+function viewscore(){
+    document.getElementById('scorepopup').style.display ='flex';
+}
+function closePopup(){
+    document.getElementById('scorepopup').style.display ='none';
+}
