@@ -1,0 +1,57 @@
+
+    [
+        {
+            "name": "Hyundai",
+            "model": "Verna 1.5 VTVT E",
+            "price": "10,15,000",
+            "usage": "1 year",
+            "brand": "Hyundai",
+            "fueltype": "Petrol"
+        },
+        {
+            "name": "Honda",
+            "model": "City - 5th Generation",
+            "price": "20,15,000",
+            "usage": "3 year",
+            "brand": "Honda",
+            "fueltype": "Petrol"
+        },
+        {
+            "name": "Mahindra",
+            "model": "XUV300 1.2 W4",
+            "price": "9,50,000",
+            "usage": "2 years",
+            "brand": "Mahindra",
+            "fueltype": "Petrol"
+        }, {
+            "name": "TATA",
+            "model": "Verna 1.5 VTVT E",
+            "price": "10,15,000",
+            "usage": "1 year",
+            "brand": "Hyundai",
+            "fueltype": "Petrol"
+        },
+        {
+            "name": "Honda",
+            "model": "Verna 5.5 VTVT E",
+            "price": "20,15,000",
+            "usage": "3 year",
+            "brand": "Honda",
+            "fueltype": "Petrol"
+        },
+        {
+            "name": "Mahindra",
+            "model": "XUV300 1.2 W4",
+            "price": "9,50,000",
+            "usage": "2 years",
+            "brand": "Mahindra",
+            "fueltype": "Petrol"
+        }, {
+            "name": "BMW",
+            "model": "5 series",
+            "price": "10,15,000",
+            "usage": "1 year",
+            "brand": "Hyundai",
+            "fueltype": "Petrol"
+        }
+    ]
